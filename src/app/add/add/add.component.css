@@ -1,0 +1,13 @@
+.form-control.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+.container{
+    width: 500px;
+    border:2px solid blue ;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+form button{
+    margin-top: 10px;
+}

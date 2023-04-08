@@ -1,0 +1,27 @@
+<div class="container">
+<h1  class="text-primary text-center">Add Post</h1>
+
+<form #addpostform = "ngForm" (ngSubmit)="addPost(addpostform.value)">
+      <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" class="form-control" name="content" required  ngModel  id="content">
+      </div>
+      
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title"  required  ngModel  id="title">
+      </div>
+      
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username"  required  ngModel  id="username">
+      </div>
+      
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control" name="image"  required  ngModel  id="image" (change)="uploadFile($event)">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="addpostform.invalid">Add</button>
+    </form>
+  </div>

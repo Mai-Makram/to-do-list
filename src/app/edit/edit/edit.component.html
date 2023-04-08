@@ -1,0 +1,25 @@
+<div class="container">
+  <h1  class="text-success text-center">Edit Post</h1>
+  <form #editpostform = "ngForm" (ngSubmit)="editPost(editpostform.value)">
+    <div class="form-group" hidden >
+        <label for="id">id</label>
+        <input type="text" class="form-control" name="id"  [(ngModel)]="post.id"  ngModel  id="id">
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" class="form-control" name="content" minlength="10" maxlength="255" required [(ngModel)]="post.content"  ngModel  id="content">
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" minlength="3" maxlength="100" required [(ngModel)]="post.title"  ngModel  id="title">
+      </div>
+      
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control" name="image"  ngModel  id="image" (change)="uploadFile($event)" >
+      </div>
+      
+      <button type="submit" class="btn btn-success" >Edit</button>
+  </form>
+</div>

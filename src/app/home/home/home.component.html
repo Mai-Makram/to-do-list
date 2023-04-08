@@ -1,0 +1,84 @@
+
+<!--<button routerLink="/add/addpost">add</button>-->
+
+
+<!--<table>
+    <tr>
+      <th>content</th>
+      <th>title</th>
+      <th>username</th>
+      <th>image</th>
+      <th>actions</th>
+    </tr>
+    <tr *ngFor="let post of posts; let i = index">
+      <td>{{post.content}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.username}}</td>
+      <td>
+        <img src='https://task.ecmpp.com/storage/{{post.image}}' >
+      </td>
+      <td>
+        <button (click)="deletePost(post.id,i)">delete</button>
+      </td>
+      <td>
+        <button routerLink="/details/detailspost/{{post.id}}">details</button>
+      </td>
+      <td>
+        <button routerLink="/edit/editpost/{{post.id}}">Edit</button>
+      </td>
+    </tr>
+  </table>-->
+
+  <div class="container">
+
+  <!--<button type="button" class="btn btn-primary" routerLink="/add/addpost" >ADD</button>
+  <div class="getByUsername">
+    <input type="text" (change)="getByUsername($event)">
+    <button type="button" class="btn btn-primary">Get</button>
+  </div>-->
+
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <!--<a class="navbar-brand">Navbar</a>-->
+      <button type="button" class="btn btn-primary" routerLink="/add/addpost">ADD</button>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="text" placeholder="userName" (change)="getByUsername($event)">
+        <button class="btn btn-outline-success" type="submit">Get</button>
+      </form>
+    </div>
+  </nav>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Content</th>
+        <th scope="col">Title</th>
+        <th scope="col">Username</th>
+        <th scope="col">Image</th>
+        <th scope="col" colspan="3" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts; let i = index">
+        <th scope="row">{{post.content}}</th>
+        <td>{{post.title}}</td>
+        <td>{{post.username}}</td>
+        <td>
+          <img src='https://task.ecmpp.com/storage/{{post.image}}' >
+        </td>
+        <td>
+          <!--<button routerLink="/details/detailspost/{{post.id}}">details</button>-->
+          <button type="button" class="btn btn-info" routerLink="/details/detailspost/{{post.id}}">Details</button>
+        </td>
+        <td>
+          <!--<button (click)="deletePost(post.id,i)">delete</button>-->
+          <button type="button" class="btn btn-danger" (click)="deletePost(post.id,i)">Delete</button>
+        </td>
+        <td>
+          <!--<button routerLink="/edit/editpost/{{post.id}}">Edit</button>-->
+          <button type="button" class="btn btn-success" routerLink="/edit/editpost/{{post.id}}">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

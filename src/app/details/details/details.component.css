@@ -1,0 +1,9 @@
+.container{
+    justify-content: center;
+    margin-top: 40px;
+    
+}
+.card{
+    margin-left: auto;
+    margin-right: auto;
+}
